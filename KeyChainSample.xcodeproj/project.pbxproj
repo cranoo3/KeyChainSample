@@ -14,6 +14,9 @@
 		5A4C08A42BAB1DB0006BB5C0 /* KeyChainSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C08A32BAB1DB0006BB5C0 /* KeyChainSampleTests.swift */; };
 		5A4C08AE2BAB1DB0006BB5C0 /* KeyChainSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C08AD2BAB1DB0006BB5C0 /* KeyChainSampleUITests.swift */; };
 		5A4C08B02BAB1DB0006BB5C0 /* KeyChainSampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C08AF2BAB1DB0006BB5C0 /* KeyChainSampleUITestsLaunchTests.swift */; };
+		5A4C08BE2BAB1DF4006BB5C0 /* KeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C08BD2BAB1DF4006BB5C0 /* KeyChainHelper.swift */; };
+		5A4C08C12BAB2409006BB5C0 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C08C02BAB2409006BB5C0 /* ContentViewModel.swift */; };
+		5A4C08C42BAB468B006BB5C0 /* KeyChainErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C08C32BAB468B006BB5C0 /* KeyChainErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		5A4C08A92BAB1DB0006BB5C0 /* KeyChainSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyChainSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4C08AD2BAB1DB0006BB5C0 /* KeyChainSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainSampleUITests.swift; sourceTree = "<group>"; };
 		5A4C08AF2BAB1DB0006BB5C0 /* KeyChainSampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainSampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5A4C08BD2BAB1DF4006BB5C0 /* KeyChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainHelper.swift; sourceTree = "<group>"; };
+		5A4C08C02BAB2409006BB5C0 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		5A4C08C32BAB468B006BB5C0 /* KeyChainErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				5A4C08922BAB1DAF006BB5C0 /* KeyChainSampleApp.swift */,
-				5A4C08942BAB1DAF006BB5C0 /* ContentView.swift */,
+				5A4C08BC2BAB1DCB006BB5C0 /* View */,
+				5A4C08C22BAB2413006BB5C0 /* ViewModel */,
+				5A4C08BF2BAB1E00006BB5C0 /* Model */,
 				5A4C08962BAB1DB0006BB5C0 /* Assets.xcassets */,
 				5A4C08982BAB1DB0006BB5C0 /* Preview Content */,
 			);
@@ -125,6 +133,31 @@
 				5A4C08AF2BAB1DB0006BB5C0 /* KeyChainSampleUITestsLaunchTests.swift */,
 			);
 			path = KeyChainSampleUITests;
+			sourceTree = "<group>";
+		};
+		5A4C08BC2BAB1DCB006BB5C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A4C08942BAB1DAF006BB5C0 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A4C08BF2BAB1E00006BB5C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A4C08BD2BAB1DF4006BB5C0 /* KeyChainHelper.swift */,
+				5A4C08C32BAB468B006BB5C0 /* KeyChainErrors.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A4C08C22BAB2413006BB5C0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A4C08C02BAB2409006BB5C0 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4C08C12BAB2409006BB5C0 /* ContentViewModel.swift in Sources */,
+				5A4C08BE2BAB1DF4006BB5C0 /* KeyChainHelper.swift in Sources */,
 				5A4C08952BAB1DAF006BB5C0 /* ContentView.swift in Sources */,
+				5A4C08C42BAB468B006BB5C0 /* KeyChainErrors.swift in Sources */,
 				5A4C08932BAB1DAF006BB5C0 /* KeyChainSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +466,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +496,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
