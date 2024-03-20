@@ -43,9 +43,6 @@ final class KeyChainHelper {
         var result: AnyObject?
         let status = SecItemCopyMatching(query, &result)
         
-        // FIXME: デバッグ用
-        print("KeyChainHelper.get status: \(status)")
-        
         // 取得する対象が存在しない場合
         guard status != errSecItemNotFound else {
             throw KeyChainError.itemNotFound
