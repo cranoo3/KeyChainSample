@@ -92,7 +92,7 @@ final class ContentViewModel {
             return
         }
         
-        if let keyChainError = error as? KeyChainError {
+        if let keyChainError = error as? KeyChainErrors {
             alertMessage = keyChainError.message
         } else {
             alertMessage = error.localizedDescription

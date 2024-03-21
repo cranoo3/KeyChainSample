@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum KeyChainError: Error {
+enum KeyChainErrors: Error {
     case duplicateEntry
     case itemNotFound
     case unknown(OSStatus)

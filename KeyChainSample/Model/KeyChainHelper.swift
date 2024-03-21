@@ -21,11 +21,11 @@ final class KeyChainHelper {
         
         // 重複している場合はエラー
         guard status != errSecDuplicateItem else {
-            throw KeyChainError.duplicateEntry
+            throw KeyChainErrors.duplicateEntry
         }
         // その他保存処理が失敗した場合はエラー
         guard status == errSecSuccess else {
-            throw KeyChainError.unknown(status)
+            throw KeyChainErrors.unknown(status)
         }
     }
     
@@ -45,12 +45,12 @@ final class KeyChainHelper {
         
         // 取得する対象が存在しない場合
         guard status != errSecItemNotFound else {
-            throw KeyChainError.itemNotFound
+            throw KeyChainErrors.itemNotFound
         }
         
         // その他エラー
         guard status == errSecSuccess else {
-            throw KeyChainError.unknown(status)
+            throw KeyChainErrors.unknown(status)
         }
         
         return result as? Data
@@ -68,12 +68,12 @@ final class KeyChainHelper {
         
         // 取得する対象が存在しない場合
         guard status != errSecItemNotFound else {
-            throw KeyChainError.itemNotFound
+            throw KeyChainErrors.itemNotFound
         }
         
         // その他エラー
         guard status == errSecSuccess else {
-            throw KeyChainError.unknown(status)
+            throw KeyChainErrors.unknown(status)
         }
     }
 }
