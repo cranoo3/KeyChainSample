@@ -12,7 +12,7 @@ final class KeyChainHelper {
     static func save(service: String, account: String, password: Data) throws {
         let query = [
             kSecClass: kSecClassGenericPassword,
-            kSecAttrGeneric: service,
+            kSecAttrService: service,
             kSecAttrAccount: account,
             kSecValueData: password
         ] as CFDictionary
@@ -33,7 +33,7 @@ final class KeyChainHelper {
     static func get(service: String, account: String) throws -> Data? {
         let query = [
             kSecClass: kSecClassGenericPassword,
-            kSecAttrGeneric: service,
+            kSecAttrService: service,
             kSecAttrAccount: account,
             kSecReturnData: true,
             kSecMatchLimit: kSecMatchLimitOne
@@ -60,7 +60,7 @@ final class KeyChainHelper {
     static func delete(service: String, account: String) throws {
         let query = [
             kSecClass: kSecClassGenericPassword,
-            kSecAttrGeneric: service,
+            kSecAttrService: service,
             kSecAttrAccount: account
         ] as CFDictionary
         
