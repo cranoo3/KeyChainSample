@@ -23,12 +23,12 @@ final class ContentViewModel {
     
     // MARK: - 値を保存する
     func save() {
-        // passwordをDataへ変換する
-        guard let convertedPasswordString = password.data(using: .utf8) else {
-            return
-        }
-        
         do {
+            // passwordをDataへ変換する
+            guard let convertedPasswordString = password.data(using: .utf8) else {
+                return
+            }
+            
             try KeyChainHelper.save(
                 service: self.service,
                 account: self.account,
