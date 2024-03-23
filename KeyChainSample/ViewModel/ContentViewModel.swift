@@ -101,12 +101,7 @@ final class ContentViewModel {
         
         // アラートにエラー文を設定
         func setErrorMessage(error: Error) {
-            // エラーがKeyChainErrorか判定する
-            if let keyChainError = error as? KeyChainErrors {
-                alertMessage = keyChainError.message
-            } else {
-                alertMessage = error.localizedDescription
-            }
+            alertMessage = error.localizedDescription
         }
     }
     
