@@ -35,7 +35,7 @@ final class ContentViewModel {
                 password: convertedPasswordString
             )
             
-            showAlert(message: "保存成功")
+            showAlert(title: "保存成功")
             clearAccountAndPassword()
         } catch {
             // エラーを表示する
@@ -71,7 +71,7 @@ final class ContentViewModel {
                 account: self.account
             )
             
-            showAlert(message: "削除成功")
+            showAlert(title: "削除成功")
             clearAccountAndPassword()
             userPassword = ""
         } catch {
@@ -80,22 +80,33 @@ final class ContentViewModel {
     }
     
     // MARK: - アラートを表示する
-    func showAlert(message: String = "", optionalError: Error? = nil) {
+    func showAlert(title: String = "", optionalError: Error? = nil) {
         // アラートの表示フラグを最後に立てる
         defer {
             isShowAlert = true
         }
-        alertMessage = message
         
-        // エラー発生している場合
-        guard let error = optionalError else {
-            return
+        if let error = optionalError {
+            // error発生している場合
+            setErrorMessage(error: error)
+        } else {
+            // error = nil
+            setTitle(titleText: title)
         }
         
-        if let keyChainError = error as? KeyChainErrors {
-            alertMessage = keyChainError.message
-        } else {
-            alertMessage = error.localizedDescription
+        // アラートのタイトルを設定
+        func setTitle(titleText: String) {
+            alertMessage = titleText
+        }
+        
+        // アラートにエラー文を設定
+        func setErrorMessage(error: Error) {
+            // エラーがKeyChainErrorか判定する
+            if let keyChainError = error as? KeyChainErrors {
+                alertMessage = keyChainError.message
+            } else {
+                alertMessage = error.localizedDescription
+            }
         }
     }
     
