@@ -26,7 +26,7 @@ final class ContentViewModel {
         do {
             // passwordをDataへ変換する
             guard let convertedPasswordString = password.data(using: .utf8) else {
-                return
+                throw ContentViewModelError.FailedToConvertPassword
             }
             
             try KeyChainHelper.save(
@@ -86,22 +86,13 @@ final class ContentViewModel {
             isShowAlert = true
         }
         
+        // エラーが発生して
         if let error = optionalError {
             // error発生している場合
-            setErrorMessage(error: error)
+            alertMessage = error.localizedDescription
         } else {
             // error = nil
-            setTitle(titleText: title)
-        }
-        
-        // アラートのタイトルを設定
-        func setTitle(titleText: String) {
-            alertMessage = titleText
-        }
-        
-        // アラートにエラー文を設定
-        func setErrorMessage(error: Error) {
-            alertMessage = error.localizedDescription
+            alertMessage = title
         }
     }
     
