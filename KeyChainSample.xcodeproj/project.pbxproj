@@ -14,6 +14,7 @@
 		5A4C08BE2BAB1DF4006BB5C0 /* KeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C08BD2BAB1DF4006BB5C0 /* KeyChainHelper.swift */; };
 		5A4C08C12BAB2409006BB5C0 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C08C02BAB2409006BB5C0 /* ContentViewModel.swift */; };
 		5A4C08C42BAB468B006BB5C0 /* KeyChainErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C08C32BAB468B006BB5C0 /* KeyChainErrors.swift */; };
+		5A7966212BAE970F00832D05 /* ContentViewModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7966202BAE970F00832D05 /* ContentViewModelError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		5A4C08BD2BAB1DF4006BB5C0 /* KeyChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainHelper.swift; sourceTree = "<group>"; };
 		5A4C08C02BAB2409006BB5C0 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		5A4C08C32BAB468B006BB5C0 /* KeyChainErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainErrors.swift; sourceTree = "<group>"; };
+		5A7966202BAE970F00832D05 /* ContentViewModelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			children = (
 				5A4C08BD2BAB1DF4006BB5C0 /* KeyChainHelper.swift */,
 				5A4C08C32BAB468B006BB5C0 /* KeyChainErrors.swift */,
+				5A7966202BAE970F00832D05 /* ContentViewModelError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A4C08C12BAB2409006BB5C0 /* ContentViewModel.swift in Sources */,
+				5A7966212BAE970F00832D05 /* ContentViewModelError.swift in Sources */,
 				5A4C08BE2BAB1DF4006BB5C0 /* KeyChainHelper.swift in Sources */,
 				5A4C08952BAB1DAF006BB5C0 /* ContentView.swift in Sources */,
 				5A4C08C42BAB468B006BB5C0 /* KeyChainErrors.swift in Sources */,
