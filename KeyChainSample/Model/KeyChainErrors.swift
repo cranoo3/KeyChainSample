@@ -11,8 +11,10 @@ enum KeyChainErrors: Error {
     case duplicateEntry
     case itemNotFound
     case unknown(OSStatus)
-    
-    var message: String {
+}
+
+extension KeyChainErrors: LocalizedError {
+    var errorDescription: String? {
         switch self {
         case .duplicateEntry:
             return "Accountが重複しています"
